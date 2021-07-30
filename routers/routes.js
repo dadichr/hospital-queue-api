@@ -5,6 +5,7 @@ const approute = express.Router()
 
 approute.post('/patients', (req, res) => {
     const {fullname, dob, gender, bpjs_no, address, address2, phone, region, province} = req.body
+    console.log(fullname);
     Patient.create({fullname, dob, gender, bpjs_no, address, address2, phone, region, province})
       .then((result) => {
         res.status(201).json({
